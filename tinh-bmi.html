@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính chỉ số cân nặng</title>
+</head>
+<body>
+<h1>NHẬP CÂN NẶNG VÀ CHIỀU CAO</h1>
+<p>nhập chiều cao</p>
+<input id="chieu-cao" type="number" placeholder="nhập theo đơn vị cm">
+<p>nhap cân nặng</p>
+<input id="can-nang" type="number" placeholder="nhập theo đơn vị kg">
+<button onclick="bmi()">OK</button>
+<script>
+    function bmi() {
+        let height = document.getElementById('chieu-cao').value;
+        height = height / 100;
+        let weight = document.getElementById('can-nang').value;
+        let result = weight / Math.pow(height, 2)
+        result = result.toFixed(2);
+        let message = 'bmi của bạn là: ' + result + '\n bạn bị: '
+        // let result = weight / (height * height);
+        if (result < 18.5) {
+            message = message + 'underweight'
+        } else if (18.5 <= result && result < 25) {
+            message = message + 'Normal'
+        } else if (25 <= result && result < 30) {
+            message = message + 'Overweight'
+        } else {
+            message = message + 'obese'
+        }
+        alert(message);
+    }
+</script>
+</body>
+</html>

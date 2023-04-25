@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập cấu trúc điều kiện phần1</title>
+</head>
+<body>
+<h1>kiểm tra chia hết</h1>
+<p>nhap a: </p>
+<input type="number" id="soA">
+<p>nhap b: </p>
+<input type="number" id="soB">
+<button onclick="mod()">kiểm tra</button>
+<hr>
+<h1>điều kiện hs vào lớp 10</h1>
+<p>nhập tuổi</p>
+<input type="number" id="tuoi">
+<button onclick="kiemTraTuoi()">kiem tra</button>
+<hr>
+<h1>kiểm tra số nguyên lớn hơn hoăc bé hơn 0</h1>
+<p>nhập số</p>
+<input id="nhapSo" type="number">
+<button onclick="kiemTraSoNguyen()">kiểm tra</button>
+<hr>
+<h1>nhập 3 số nguyên và tìm giá trị lớn nhất</h1>
+<p>nhap a: </p>
+<input type="number" id="firstNumber">
+<p>nhap b: </p>
+<input type="number" id="secondNumber">
+<p>nhap c: </p>
+<input type="number" id="thirNumber">
+<button onclick="kiemTraSoLonNhat()">kiểm tra</button>
+<hr>
+<h1>xếp hạng học lực</h1>
+<p>điểm kiểm tra:</p>
+<input type="number" id="diemKtra">
+<p>điểm thi giữa kỳ</p>
+<input type="number" id="diemThiGiuaKy">
+<p>điểm thi cuối kỳ</p>
+<input type="number"id="diemThiCuoiKy">
+<button onclick="xepHangHocLuc()">kiểm tra</button>
+<hr>
+<h1>tính hoa hồng</h1>
+<p>nhập doanh số bán hàng</p>
+<input type="number" id="doanhSo" placeholder="đơn vị việt nam đồng">
+<button onclick="hoaHong()">tiền hoa hồng</button>
+<br>
+<h1>tính cước điện thoại</h1>
+<p>nhập số phút đã gọi </p>
+<input type="number" id="phutGoi">
+<button onclick="cuocDienThoai()">thành tiền</button>
+<script>
+    function cuocDienThoai(){
+        let a = +document.getElementById('phutGoi').value
+        let phiBatBuoc = 25000
+        let phi50Phut = a*600+phiBatBuoc
+        let phiTruoc200Phut = phi50Phut+((a-50)*400)
+        let phiSau200Phut = phiTruoc200Phut +((a-200)*200)
+        let  message = 'chi phí thanh toán cước gọi của bạn là '
+        if (a<=50){
+        alert(message+phi50Phut)
+        }else if (a<=200){
+            alert(message+phiTruoc200Phut)
+        }else {
+            alert(message+phiSau200Phut)
+        }
+    }
+    function hoaHong(){
+        let a = +document.getElementById('doanhSo').value
+        let hoaHongThap = a*0.05
+        let hoaHongKha = a*0.1
+        let hoaHongCao = a*0.2
+        if (a<10000000){
+            alert('hoa hồng của bạn là '+ hoaHongThap +'vnđ')
+        }else if (a<50000000){
+            alert('hoa hồng của bạn là '+ hoaHongKha+'vnđ')
+        }else {
+            alert('hoa hồng của bạn là '+ hoaHongCao+ 'vnđ')
+        }
+    }
+    function xepHangHocLuc(){
+        let a = +document.getElementById('diemKtra')
+        let b = +document.getElementById('diemThiGiuaKy')
+        let c = +document.getElementById('diemThiCuoiKy')
+        let d = (a+b+c)/3
+        if (d>8.5){
+            alert('bạn đạt học sinh giỏi')
+        }else if (d<5.5){
+            alert('bạn đạt học sinh trung bình')
+        }else {
+            alert('bạn đạt học sinh khá')
+        }
+    }
+    function kiemTraSoLonNhat() {
+        let a = +document.getElementById('firstNumber').value
+        let b = +document.getElementById('secondNumber').value
+        let c = +document.getElementById('thirNumber').value
+        if (a > b) {
+            if (a > c) {
+                alert(a + ' là số lớn nhất')
+            } else {
+                alert(c + ' là số lớn nhất')
+            }
+
+        } else if (b > c) {
+            alert(b + ' là số lớn nhất')
+        } else {
+            alert(c + ' là số lớn nhất')
+        }
+
+    }
+
+    function kiemTraSoNguyen() {
+        let a = parseInt(document.getElementById('nhapSo').value)
+        if (a > 0) {
+            alert(a + ' là số lớn hơn 0')
+        } else if (a < 0) {
+            alert(a + ' là số nhỏ hơn 0')
+        } else {
+            alert(a + ' là số bằng 0')
+        }
+    }
+
+    function kiemTraTuoi() {
+        let a = document.getElementById('tuoi').value
+        if (a < 16) {
+            alert('bạn không đủ tuổi để học lớp 10')
+        } else {
+            alert('bạn đủ tổi để học lớp 10')
+        }
+    }
+
+    function mod() {
+        let a = +document.getElementById('soA').value
+        let b = +document.getElementById('soB').value
+        let c = a % b
+        if (c == 0) {
+            alert(a + ' chia hết cho ' + b);
+        } else {
+            alert(a + ' không chia hêt cho ' + b);
+        }
+    }
+</script>
+</body>
+</html>

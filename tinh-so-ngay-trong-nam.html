@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính số ngày trong tháng</title>
+</head>
+<body>
+<input type="text" id="month">
+<button onclick="days()">Tính số ngày</button>
+<p id="days" ></p>
+<script>
+    let month = document.getElementById('month');
+
+    function days(){
+        let message = 'tháng ' + month.value +' gồm '
+        switch (+month.value){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                message = message+'31 ngày';
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                message = message +'30 ngày'
+                break;
+            case 2:
+                message = message + '28 hoặc 29 ngày'
+        }
+        document.getElementById('days').innerText=message;
+    }
+</script>
+</body>
+</html>
