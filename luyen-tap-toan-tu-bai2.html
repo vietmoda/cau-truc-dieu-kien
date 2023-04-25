@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuỗi mes</title>
+</head>
+<body>
+<script>
+    let login = prompt('nhập giá trị');
+    let message = '';
+    // if (login == "Employee") {
+    //     message = 'hello'
+    // } else if (login == "director") {
+    //     message = 'greeting'
+    // } else if (login == '') {
+    //     message = 'no login'
+    // } else {
+    //     message = ''
+    // }
+    // alert(message);
+
+    // login == 'Employee'? message = 'hello' :
+    //     login =='director' ? message = 'greeting' :
+    //         login == '' ? message ='no login' : message=''
+
+    message = login == 'Employee' ? 'hello' :
+        login == 'director' ? 'greeting' :
+            login == '' ? 'no login' : ''
+    alert(message)
+
+</script>
+</body>
+</html>
