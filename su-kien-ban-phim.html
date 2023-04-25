@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>điều khiển ảnh bằng bàn phím</title>
+</head>
+<body onload="chay()">
+<img id="imgNobia" src="https://gamesao.vnncdn.net/Resources/Upload/Images/News/9445b335-b18e-422f-baa2-4363e10743c5.jpg" style="position: absolute; left: 0; top: 0" alt="">
+<script>
+  function up(){
+    let element = document.getElementById('imgNobia');
+    element.style.top = parseInt(element.style.top) - 5 + 'px';
+  }function down(){
+    let element = document.getElementById('imgNobia');
+    element.style.top = parseInt(element.style.top) + 5 + 'px';
+  }
+  function left(){
+    let element = document.getElementById('imgNobia');
+    element.style.left = parseInt(element.style.top) - 5 + 'px';
+  }
+  function right(){
+    let element = document.getElementById('imgNobia');
+    element.style.left = parseInt(element.style.top) + 5 + 'px';
+  }
+  function diChuyen (event){
+    switch (event.keyCode){
+      case 37:
+        left();
+        break;
+      case 39:
+        right();
+        break;
+      case 38:
+        up();
+        break;
+      case 40:
+        down();
+        break;
+    }
+  }
+  function chay(){
+    window.addEventListener('keydown', diChuyen());
+  }
+</script>
+</body>
+</html>

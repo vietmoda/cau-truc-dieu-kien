@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điều khiển bóng bằng chuột</title>
+</head>
+<body>
+<img id="imgBall" src="https://thegioithethao.vn/images/products/2021/12/09/large/qua-bong-da-bundesliga-2021_1639022990.jpg" width="30%" alt="">
+<p>click để di chuyển</p>
+<input type="button" value="click đi" onclick="moveRight()">
+<script>
+  let imgObj = null;                                      //Tạo biến imgObj để lưu ảnh
+  imgObj = document.getElementById('imgBall');
+  function init(){
+    imgObj.style.position = 'relative';
+    imgObj.style.left = '0px';
+  }
+  function moveRight(){
+    imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+  }
+  window.onload = init;
+</script>
+</body>
+</html>
