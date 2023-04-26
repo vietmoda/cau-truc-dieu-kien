@@ -1,10 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>luyện tập cấu trúc điều kiện</title>
 </head>
 <body>
-$END$
+<h1>chuyển từ độ c sang độ f</h1>
+<span>nhập độ C:</span>
+<input type="number" id="doC">
+<button onclick="doiCsangF()">đổi sang F</button>
+<hr>
+<h1>chuyển từ mét sang feet</h1>
+<span>nhập độ dài đơn vị mét:</span>
+<input type="number" id="doDaiMet">
+<button onclick="doiMetSangFeet()">đổi sang feet</button>
+<hr>
+<h1>tính diện tích hình vuông</h1>
+<span>nhập độ dài cạnh: </span>
+<input id="canhVuong" type="number" placeholder="đon vị cm">
+<button onclick="dienTichHinhVuong()">tính diện tích</button>
+<hr>
+<h1>tính diện tích hình chữ nhật</h1>
+<span>nhập chiều cao:</span>
+<input type="number" id="chieuCao" placeholder="đơn vị cm"><br>
+<span>nhập chiều rộng:</span>
+<input type="number" id="chieuRong" placeholder="đơn vị cm"><br>
+<button onclick="dienTichHinhChuNhat()">tính diện tích</button>
+<hr>
+<h1>giải phương trình bậc 1</h1>
+<p>dạng cơ bản: a.x + b = 0</p>
+<span>nhập số a: </span>
+<input type="number" id="soA">
+<span>nhập số b: </span>
+<input type="number" id="soB">
+<button onclick="giaiPTbac1()">giải</button>
+<hr>
+<h1>giải phương trình bậc 2</h1>
+<p>dạng cơ bản: a.x<sup>2</sup> + b.x +c = 0</p>
+<span>nhập số a: </span>
+<input type="number" id="numberA">
+<span>nhập số b: </span>
+<input type="number" id="numberB">
+<span>nhập số c: </span>
+<input type="number" id="numberC">
+<button onclick="giaiPTbac2()">giải</button>
+<hr>
+<h1>kiểm tra số tuổi phù hợp với con người</h1>
+<span>nhập số tuổi: </span>
+<input type="number" id="tuoi">
+<button onclick="kiemTraTuoi()">kiểm tra</button>
+<hr>
+<h1>kiểm tra cạnh tam giác</h1>
+<span>nhập cạnh a: </span>
+<input type="number" id="canhA">
+<span>nhập cạnh b: </span>
+<input type="number" id="canhB">
+<span>nhập cạnh c: </span>
+<input type="number" id="canhC">
+<button onclick="kiemTraCanhTamGiac()">kiểm tra</button>
+<hr>
+<h1>tính lãi ngân hàng</h1>
+<span>nhập số tiền vay ban đầu: </span>
+<input type='number' id="vayBanDau">
+<span>nhập số tháng muôốn vay: </span>
+<input type="number" id="thangVay">
+<button>tính lãi xuất</button>
+<script>
+    function laiXuatNganHang(){
+        let a = +document.getElementById('vayBanDau').value
+        let b = +document.getElementById('thangVay').value
+        let c = a*
+    }
+    function kiemTraCanhTamGiac() {
+        let a = parseInt(document.getElementById('canhA').value)
+        let b = parseInt(document.getElementById('canhB').value)
+        let c = parseInt(document.getElementById('canhC').value)
+        let d = a + b
+        let e = b + c
+        let f = a + c
+        if (a > 0 && b > 0 && c > 0 && d > c && e > a && f > b) {
+            alert('3 cạnh này là 3 cạnh tam giác')
+        } else {
+            alert('3 cạnh này không phải là 3 cạnh tam giác')
+        }
+    }
+
+    function kiemTraTuoi() {
+        let a = parseInt(document.getElementById('tuoi').value)
+        if (a <= 0 || a >= 120) {
+            alert('bạn không phải là người :))')
+        } else {
+            alert('bạn đích thị là con người')
+        }
+    }
+
+    function giaiPTbac2() {
+        let a = +document.getElementById('numberA').value
+        let b = +document.getElementById('numberB').value
+        let c = +document.getElementById('numberC').value
+        let x = (b * b) - (4 * (a * c))
+        alert('giá trị x là: ' + x)
+    }
+
+    function giaiPTbac1() {
+        let a = +document.getElementById('soA').value
+        let b = +document.getElementById('soB').value
+        let x = -(b / a)
+        alert('giá trị x là ' + x)
+    }
+
+    function dienTichHinhChuNhat() {
+        let a = +document.getElementById('chieuCao').value
+        let b = +document.getElementById('chieuRong').value
+        let s = (a * b) / 2
+        alert('diện tích hình chữ nhật là: ' + s)
+    }
+
+    function dienTichHinhVuong() {
+        let a = +document.getElementById('canhVuong').value
+        let b = a * 4
+        alert('diện tích hình vuông là: ' + b + ' cm2')
+    }
+
+    function doiMetSangFeet() {
+        let a = +document.getElementById('doDaiMet').value
+        let b = a * 3.2808
+        alert('độ dài mét sang feet là: ' + b.toFixed(2))
+    }
+
+    function doiCsangF() {
+        let a = +document.getElementById('doC').value
+        let b = (a * (9 / 5)) + 32
+        alert('đô F sau khi chuyển từ độ C là: ' + b)
+    }
+</script>
 </body>
 </html>
